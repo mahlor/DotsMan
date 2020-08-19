@@ -55,7 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Components\Moveable.cs" />
+     <Compile Include="Assets\Scripts\Components\Movable.cs" />
+     <Compile Include="Assets\Scripts\Systems\MovableSystem.cs" />
+     <Compile Include="Assets\Scripts\Components\Player.cs" />
+     <Compile Include="Assets\Scripts\Systems\PlayerSystem.cs" />
+     <Compile Include="Assets\Scripts\Components\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Systems\EnemySystem.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/hmichael/source/repos/DotsMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -187,6 +192,9 @@
  </Reference>
  <Reference Include="Unity.Physics.Editor">
  <HintPath>C:/Users/hmichael/source/repos/DotsMan/Library/ScriptAssemblies/Unity.Physics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.quicksearch">
+ <HintPath>C:/Users/hmichael/source/repos/DotsMan/Library/ScriptAssemblies/com.unity.quicksearch.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
