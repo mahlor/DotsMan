@@ -339,8 +339,7 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-/Library
+
 /Temp
-Temp/
-/Library/BurstCache/JIT
-/Library/PackageCache/com.unity.quicksearch@1.5.4
+/Library
+
