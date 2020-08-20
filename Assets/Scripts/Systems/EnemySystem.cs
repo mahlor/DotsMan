@@ -11,10 +11,11 @@ using Unity.Physics.Systems;
 [UpdateAfter(typeof(EndFramePhysicsSystem))]
 public class EnemySystem : SystemBase
 {
-    private Unity.Mathematics.Random rng = new Unity.Mathematics.Random(12);
+    private Unity.Mathematics.Random rng = new Unity.Mathematics.Random(123u);
 
     protected override void OnUpdate()
     {
+
         var raycaster = new MovementRayCast() { pw = World.GetOrCreateSystem<BuildPhysicsWorld>().PhysicsWorld };
         rng.NextInt();
         var rngTemp = rng;
@@ -22,7 +23,7 @@ public class EnemySystem : SystemBase
         
         Entities.ForEach((ref Movable mov, ref Enemy enemy, in Translation trans) =>
         {
-            if (math.distance(trans.Value, enemy.previousCell) > 0.9f)
+            if (math.distance(trans.Value, enemy.previousCell) > .9f)
             {
                 enemy.previousCell = math.round(trans.Value);
 
@@ -56,7 +57,7 @@ public class EnemySystem : SystemBase
             var ray = new RaycastInput()
             {
                 Start = pos,
-                End = pos + (direction * 0.9f),
+                End = pos + (direction * .9f),
                 Filter = new CollisionFilter()
                 {
                     GroupIndex = 0,
@@ -64,6 +65,7 @@ public class EnemySystem : SystemBase
                     CollidesWith = 1u << 2
                 }
             };
+            bool ret = pw.CastRay(ray);
             return pw.CastRay(ray);
         }
     }
