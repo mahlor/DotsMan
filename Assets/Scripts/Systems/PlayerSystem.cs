@@ -1,23 +1,23 @@
-﻿using UnityEngine;
-using Unity.Burst;
-using Unity.Collections;
+﻿using Assets.Scripts.Components;
 using Unity.Entities;
-using Unity.Jobs;
 using Unity.Mathematics;
-using Unity.Transforms;
+using UnityEngine;
 
-public class PlayerSystem : SystemBase
+namespace Assets.Scripts.Systems
 {
-    protected override void OnUpdate()
+    public class PlayerSystem : SystemBase
     {
-        var x = Input.GetAxis("Horizontal");
-        var y = Input.GetAxis("Vertical");
-
-        Entities
-            .WithAll<Player>()
-            .ForEach((ref Movable mov) =>
+        protected override void OnUpdate()
         {
-            mov.direction = new float3(x, 0, y);
-        }).Schedule();
+            var x = Input.GetAxis("Horizontal");
+            var y = Input.GetAxis("Vertical");
+
+            Entities
+                .WithAll<Player>()
+                .ForEach((ref Movable mov) =>
+                {
+                    mov.direction = new float3(x, 0, y);
+                }).Schedule();
+        }
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
-using Unity.Collections;
-using Unity.Entities;
-using Unity.Mathematics;
+﻿using Unity.Entities;
 
-[GenerateAuthoringComponent]
-public struct Player : IComponentData
+namespace Assets.Scripts.Components
 {
+    [GenerateAuthoringComponent]
+    public struct Player : IComponentData
+    {
     
+    }
 }

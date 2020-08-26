@@ -1,12 +1,11 @@
 ﻿using Unity.Entities;
-using Unity.Mathematics;
 
 namespace Assets.Scripts.Components
 {
     [GenerateAuthoringComponent]
-    public struct Enemy : IComponentData
+    public struct Kill : IComponentData
     {
-        public float3 previousCell;
+        public float timer;
 
     }
 }

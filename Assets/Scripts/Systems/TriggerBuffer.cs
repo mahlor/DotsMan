@@ -1,9 +1,11 @@
 ﻿using Unity.Entities;
-using UnityEngine;
 
-[GenerateAuthoringComponent]
-public struct TriggerBuffer : IBufferElementData
+namespace Assets.Scripts.Systems
 {
-    public Entity entity;
+    [GenerateAuthoringComponent]
+    public struct TriggerBuffer : IBufferElementData
+    {
+        public Entity entity;
+    }
 }
 

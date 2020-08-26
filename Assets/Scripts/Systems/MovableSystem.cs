@@ -1,20 +1,21 @@
-﻿using Unity.Burst;
-using Unity.Collections;
+﻿using Assets.Scripts.Components;
 using Unity.Entities;
-using Unity.Jobs;
-using Unity.Mathematics;
 using Unity.Physics;
-using Unity.Transforms;
+using UnityEditor;
 
-public class MovableSystem : SystemBase
+namespace Assets.Scripts.Systems
 {
-    protected override void OnUpdate()
+    public class MovableSystem : SystemBase
     {
-        Entities.ForEach((ref PhysicsVelocity physVel, in Movable mov) =>
+       
+        protected override void OnUpdate()
         {
-            var step = mov.direction * mov.speed;
-            physVel.Linear = step;
+            Entities.ForEach((ref PhysicsVelocity physVel, in Movable mov) =>
+            {
+                var step = mov.direction * mov.speed;
+                physVel.Linear = step;
 
-        }).Schedule();
+            }).Schedule();
+        }
     }
 }
