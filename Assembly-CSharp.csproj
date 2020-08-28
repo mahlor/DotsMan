@@ -69,6 +69,14 @@
      <Compile Include="Assets\Scripts\Systems\DamageSystem.cs" />
      <Compile Include="Assets\Scripts\Authoring\PhysicsEventAuthoring.cs" />
      <Compile Include="Assets\Scripts\Components\CollisionBuffer.cs" />
+     <Compile Include="Assets\Scripts\Components\Collectible.cs" />
+     <Compile Include="Assets\Scripts\Components\Pellet.cs" />
+     <Compile Include="Assets\Scripts\Components\PowerPill.cs" />
+     <Compile Include="Assets\Scripts\Systems\CollectionSystem.cs" />
+     <Compile Include="Assets\Scripts\Systems\GameStateSystem.cs" />
+     <Compile Include="Assets\Scripts\Components\Spawner.cs" />
+     <Compile Include="Assets\Scripts\Authoring\SpawnerAuthoring.cs" />
+     <Compile Include="Assets\Scripts\Systems\SpawnSystem.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/hmichael/source/repos/DotsMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

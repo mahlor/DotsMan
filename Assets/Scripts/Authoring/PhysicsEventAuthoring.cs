@@ -16,9 +16,6 @@ namespace Assets.Scripts.Authoring
         {
             dstManager.AddBuffer<CollisionBuffer>(entity);
             dstManager.AddBuffer<TriggerBuffer>(entity);
-            dstManager.AddComponentData(entity, new Kill() { timer = 1 });
-            dstManager.AddComponentData(entity, new Health() { value = hp });
-
         }
     }
 }
