@@ -15,10 +15,7 @@ namespace Assets.Scripts.Systems
 
             Entities
                 .WithAll<Player>()
-                .ForEach((ref Movable mov) =>
-                {
-                    mov.direction = new float3(x, 0, y);
-                }).Schedule();
+                .ForEach((ref Movable mov) => { mov.direction = new float3(x, 0, y); }).Schedule();
 
             var ecb = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>().CreateCommandBuffer();
 
@@ -34,8 +31,7 @@ namespace Assets.Scripts.Systems
                         dmg.value = 0;
                         ecb.RemoveComponent<PowerPill>(e);
                     }
-                }).Run();
-
+                }).WithoutBurst().Run();
         }
     }
 }

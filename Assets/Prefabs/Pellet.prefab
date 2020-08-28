@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2536008121609527197}
   - component: {fileID: 2716050774662170190}
   - component: {fileID: 2421094254806819260}
+  - component: {fileID: 8359574877048863975}
   m_Layer: 0
   m_Name: Pellet
   m_TagString: Untagged
@@ -282,3 +283,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a6e83f08033444b966e1c4b53b8f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8359574877048863975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2734462633625829003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b52abfea8853d743a4cbdf7ce956d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxName: PelletCollect
+  spawnPrefab: {fileID: 6609468442160197339, guid: 332a2895308b32c40817e77b799985e5, type: 3}
+  pointValue: 0

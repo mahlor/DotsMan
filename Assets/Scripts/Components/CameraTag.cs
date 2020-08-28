@@ -3,10 +3,10 @@ using Unity.Entities;
 
 namespace Assets.Scripts.Components
 {
-    [GenerateAuthoringComponent]
+   
     [BurstCompile]
-    public struct Kill : IComponentData
+    public struct CameraTag : IComponentData
     {
-        public float timer;
+
     }
 }

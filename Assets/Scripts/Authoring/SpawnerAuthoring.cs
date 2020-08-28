@@ -1,25 +1,25 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Components;
 using Unity.Entities;
-using Unity.Mathematics;
 using UnityEngine;
 
-[DisallowMultipleComponent]
-[RequiresEntityConversion]
-public class SpawnerAuthoring : MonoBehaviour, IConvertGameObjectToEntity, IDeclareReferencedPrefabs
+namespace Assets.Scripts.Authoring
 {
-
-
-    public GameObject spawnObject;
-
-    public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
+    [DisallowMultipleComponent]
+    [RequiresEntityConversion]
+    public class SpawnerAuthoring : MonoBehaviour, IConvertGameObjectToEntity, IDeclareReferencedPrefabs
     {
-        dstManager.AddComponentData(entity,
-            new Spawner() {spawnPrefab = conversionSystem.GetPrimaryEntity(spawnObject)});
-    }
+        public GameObject spawnObject;
 
-    public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs)
-    {
-        referencedPrefabs.Add(spawnObject);
+        public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
+        {
+            dstManager.AddComponentData(entity,
+                new Spawner {spawnPrefab = conversionSystem.GetPrimaryEntity(spawnObject)});
+        }
+
+        public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs)
+        {
+            referencedPrefabs.Add(spawnObject);
+        }
     }
 }

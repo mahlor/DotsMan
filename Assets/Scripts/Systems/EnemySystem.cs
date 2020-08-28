@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Components;
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -11,16 +12,15 @@ namespace Assets.Scripts.Systems
     [UpdateAfter(typeof(EndFramePhysicsSystem))]
     public class EnemySystem : SystemBase
     {
-        private Unity.Mathematics.Random rng = new Unity.Mathematics.Random(123u);
+        private Random rng = new Random(123u);
 
         protected override void OnUpdate()
         {
-
-            var raycaster = new MovementRayCast() { pw = World.GetOrCreateSystem<BuildPhysicsWorld>().PhysicsWorld };
+            var raycaster = new MovementRayCast {pw = World.GetOrCreateSystem<BuildPhysicsWorld>().PhysicsWorld};
             rng.NextInt();
             var rngTemp = rng;
 
-        
+
             Entities.ForEach((ref Movable mov, ref Enemy enemy, in Translation trans) =>
             {
                 if (math.distance(trans.Value, enemy.previousCell) > .9f)
@@ -40,35 +40,34 @@ namespace Assets.Scripts.Systems
 
                     mov.direction = validDir[rngTemp.NextInt(validDir.Length)];
                     validDir.Dispose();
-
                 }
             }).Schedule();
         }
 
+        [BurstCompile]
         private struct MovementRayCast
         {
-            [ReadOnly]public PhysicsWorld pw;
+            [ReadOnly] public PhysicsWorld pw;
 
             public bool CheckRay(float3 pos, float3 direction, float3 currentDirection)
             {
                 if (direction.Equals(-currentDirection))
                     return true;
 
-                var ray = new RaycastInput()
+                var ray = new RaycastInput
                 {
                     Start = pos,
-                    End = pos + (direction * .9f),
-                    Filter = new CollisionFilter()
+                    End = pos + direction * .9f,
+                    Filter = new CollisionFilter
                     {
                         GroupIndex = 0,
                         BelongsTo = 1u << 1,
                         CollidesWith = 1u << 2
                     }
                 };
-                bool ret = pw.CastRay(ray);
+                var ret = pw.CastRay(ray);
                 return pw.CastRay(ray);
             }
         }
-
     }
 }

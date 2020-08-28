@@ -1,8 +1,7 @@
-﻿using Assets.Scripts.Components;
+﻿using UnityEngine;
+using Assets.Scripts.Components;
+using Assets.Scripts.Monobehaviour;
 using Unity.Entities;
-using Unity.Mathematics;
-using UnityEngine;
-
 
 namespace Assets.Scripts.Systems
 {
@@ -12,8 +11,15 @@ namespace Assets.Scripts.Systems
         protected override void OnUpdate()
         {
             var pelletQuery = GetEntityQuery(ComponentType.ReadOnly<Pellet>());
-            Debug.Log(pelletQuery.CalculateEntityCount());
+            var playerQuery = GetEntityQuery(ComponentType.ReadOnly<Player>());
+            
+            if (pelletQuery.CalculateEntityCount() <= 0)
+                GameManager.instance.Win();
 
+            if (playerQuery.CalculateEntityCount() <= 0)
+            {
+                GameManager.instance.Lose();
+            }
         }
     }
 }

@@ -56,27 +56,54 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Systems\MovableSystem.cs" />
+     <Compile Include="Assets\Scripts\Components\Collectible.cs" />
+     <Compile Include="Assets\Scripts\Authoring\PhysicsEventAuthoring.cs" />
+     <Compile Include="Assets\Scripts\Components\PowerPill.cs" />
      <Compile Include="Assets\Scripts\Components\Player.cs" />
      <Compile Include="Assets\Scripts\Systems\EnemySystem.cs" />
+     <Compile Include="Assets\Scripts\Monobehaviour\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Authoring\SpawnerAuthoring.cs" />
      <Compile Include="Assets\Scripts\Systems\PlayerSystem.cs" />
      <Compile Include="Assets\Scripts\Components\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Systems\CollisionSystem.cs" />
-     <Compile Include="Assets\Scripts\Systems\TriggerBuffer.cs" />
-     <Compile Include="Assets\Scripts\Components\Movable.cs" />
-     <Compile Include="Assets\Scripts\Components\Health.cs" />
      <Compile Include="Assets\Scripts\Components\Kill.cs" />
-     <Compile Include="Assets\Scripts\Components\Damage.cs" />
-     <Compile Include="Assets\Scripts\Systems\DamageSystem.cs" />
-     <Compile Include="Assets\Scripts\Authoring\PhysicsEventAuthoring.cs" />
+     <Compile Include="Assets\Scripts\Systems\CollisionSystem.cs" />
      <Compile Include="Assets\Scripts\Components\CollisionBuffer.cs" />
-     <Compile Include="Assets\Scripts\Components\Collectible.cs" />
-     <Compile Include="Assets\Scripts\Components\Pellet.cs" />
-     <Compile Include="Assets\Scripts\Components\PowerPill.cs" />
-     <Compile Include="Assets\Scripts\Systems\CollectionSystem.cs" />
-     <Compile Include="Assets\Scripts\Systems\GameStateSystem.cs" />
+     <Compile Include="Assets\Scripts\Systems\TriggerBuffer.cs" />
+     <Compile Include="Assets\Scripts\Systems\DamageSystem.cs" />
      <Compile Include="Assets\Scripts\Components\Spawner.cs" />
-     <Compile Include="Assets\Scripts\Authoring\SpawnerAuthoring.cs" />
      <Compile Include="Assets\Scripts\Systems\SpawnSystem.cs" />
+     <Compile Include="Assets\Scripts\Components\Damage.cs" />
+     <Compile Include="Assets\Scripts\Systems\GameStateSystem.cs" />
+     <Compile Include="Assets\Scripts\Components\Health.cs" />
+     <Compile Include="Assets\Scripts\Components\Movable.cs" />
+     <Compile Include="Assets\Scripts\Systems\CollectionSystem.cs" />
+     <Compile Include="Assets\Scripts\Components\Pellet.cs" />
+     <Compile Include="Assets\Scripts\Monobehaviour\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Components\OnKill.cs" />
+     <Compile Include="Assets\Scripts\Authoring\OnKillAuthoring.cs" />
+     <Compile Include="Assets\Scripts\Components\CameraTag.cs" />
+     <Compile Include="Assets\Scripts\Authoring\CameraAuthoring.cs" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/hmichael/source/repos/DotsMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -396,7 +423,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Burst.Unsafe">
- <HintPath>C:/Users/hmichael/source/repos/DotsMan/Library/PackageCache/com.unity.burst@1.3.2/Unity.Burst.Unsafe.dll</HintPath>
+ <HintPath>C:/Users/hmichael/source/repos/DotsMan/Library/PackageCache/com.unity.burst@1.3.5/Unity.Burst.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Collections.LowLevel.ILSupport">
  <HintPath>C:/Users/hmichael/source/repos/DotsMan/Library/PackageCache/com.unity.collections@0.12.0-preview.13/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
